@@ -1,7 +1,4 @@
 <head>
-    <?php
-        $action = filter_input(INPUT_POST, 'action');
-    ?>
     <!-- Fun Formatting Stuff -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +15,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Kaushan+Script&family=Moon+Dance&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Phudu:wght@500&family=Kaushan+Script&family=Moon+Dance&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
     <!--Programmer: Chloe Madison Gertner 
         Purpose: 
             This Website is only to be used for the purposes of an FBLA competition and as a website for the business of

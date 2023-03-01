@@ -15,11 +15,11 @@ catch (PDOException $e){
 
 
 
-function createSection($sectionTitle, $sectionBody) {
+function createSection($sectionTitle, $sectionBody, $type) {
     echo("
             <h3 class='secHead'> $sectionTitle </h3>
             <hr class='secHeadBreak'>
-            <p class='secBody'> $sectionBody </p>
+            <p class='$type'> $sectionBody </p>
         ");
 }
 

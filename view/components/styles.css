@@ -2,6 +2,7 @@
 :root {
     --clr_orange1: #a03800;
     --clr_orange2: #cb4f0c;
+    --clr_orange3: rgba(71, 25, 0,0.2);
     --clr_tan1: rgb(255, 226, 197);
     --clr_lightGrey1: #faf7f7;
     --white: #ffffff;
@@ -110,22 +111,28 @@ label {
 
 #banner {
     width: 100%;
-    background-image: linear-gradient(/*#FF5900  ,*/#D84C00, #C64500);
-    background-color: rgba(203, 79, 12,.5);
     text-align: center;
     padding-top: 40px;
-}
-
-.homeBanner {
     padding-top: 40px;
     text-align:center;
     height: 600px;
     width: 100%;
-    background-image: url("backgroundFiltered.png");
     background-size:cover;
     border-bottom-width: 5px;
     border-bottom-style: solid;
     border-bottom-color: var(--clr_orange1);
+}
+
+.homeBanner {
+    background-image: url("bannerImages/backgroundFiltered.png");
+}
+
+.contactBanner {
+    background-image: url("bannerImages/contactBanner.png");
+}
+
+.bannerArrow {
+    height: 50px;
 }
 
 .bannerText {
@@ -199,6 +206,8 @@ p {
     width: 28%;
     height: 100%;
     overflow:auto;
+    margin-bottom: 30px;
+    box-shadow: 0px 5px var(--clr_orange3);
 }
 
 .set3_cent {
@@ -206,6 +215,7 @@ p {
     width: 42%;
     height: 100%;
     overflow:auto;
+    box-shadow: 0px 5px var(--clr_orange3);
 }
 
 .secHead {
@@ -228,6 +238,17 @@ p {
     font-family: 'Abel', sans-serif;
     font-size: 16px;
     text-align: left;
+}
+
+.contactText {
+     margin-left: 30px;
+    margin-right: 30px;
+    padding-bottom: 25px;
+    padding-top: 15px;
+    color: var(--clr_orange1);
+    font-family: 'Abel', sans-serif;
+    font-size: 16px;
+    text-align: center;
 }
 
 .logo {

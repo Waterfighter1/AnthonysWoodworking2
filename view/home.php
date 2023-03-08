@@ -33,10 +33,19 @@
     </div>
 
     <div id="spotLight">
-        <div class="secAnnouce">
-            <hr class="headBuffer">
-            <h3 id="annouce" class="secHead"> Our Weekly Spotlight </h3>
-            <hr class="headBuffer">
+        <div class="spotHeader">
+            <div class="secAnnouce">
+                <div class='secHeader'>
+                    <hr class="headBuffer">
+                    <h3 id="annouce" class="secHead"> Our Weekly Spotlight </h3>
+                    <hr class="headBuffer">
+                </div>
+            </div>
+
+            <?php
+                $spotLight = getWeeklySpotlight();
+                echo("<h1 class='spotLightName'>  $spotLight[1] </h1>");
+            ?>
         </div>
     </div>
 </div>

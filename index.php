@@ -51,6 +51,9 @@
         case 'goProfile':
             include("view/profile.php");
             break;
+        case 'goProduct':
+            include("view/product.php");
+            break;
         case 'goProducts':
             include("view/products.php");
             break;

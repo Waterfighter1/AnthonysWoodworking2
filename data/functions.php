@@ -9,8 +9,10 @@ try {
     $db = new PDO($dsn, $username, $password);
 } 
 // If it fails, direct to the error page
+
+// TO FIX, ADD ERROR PAGE
 catch (PDOException $e){
-    die(include "view/NonAdmin/error.php");  
+    die();  
 }
 
 
@@ -39,6 +41,43 @@ function attemptLogIn($username, $password) {
 
     return $status;
 }
+
+function getProducts() {
+    $myQuery = "Select * from products ORDER BY product_Type DESC";
+    global $db;
+    $qry = $db->query($myQuery);       
+    $products = $qry->fetchAll();
+    return $products;
+}
+
+function getProductsById($id) {
+    $myQuery = "Select * from products ORDER BY product_Type DESC";
+    global $db;
+    $qry = $db->query($myQuery);       
+    $products = $qry->fetchAll();
+
+    foreach ($products as $product) {
+        if ($product[0] == $id) {
+            return $product;
+        }
+    }
+}
+
+function getWeeklySpotlight() {
+    $myQuery = "Select * from products ORDER BY product_Type DESC";
+    global $db;
+    $qry = $db->query($myQuery);       
+    $products = $qry->fetchAll();
+
+    foreach ($products as $product) {
+        if ($product[7] == 1){
+            return $product;
+        }
+    }
+
+    return $products;
+}
+
 
 function getUsers() {
     $myQuery = "Select * from users";
@@ -122,9 +161,9 @@ function attemptSignUp($username, $password, $email) {
 }
 
 function createUser($name, $username, $password, $email) {
-    $username = str_replace("'", "\'", $username);
-    $password = str_replace("'", "\'", $password);
-    $email = str_replace("'", "\'", $email);
+    $username = filter_var(str_replace("'", "\'", $username));
+    $password = filter_var(str_replace("'", "\'", $password));
+    $email = filter_var(str_replace("'", "\'", $email));
 
     $sql = "INSERT INTO `users` (`user_ID`, `user_Name`, `user_Email`, `user_EmailAllowed`, `user_Username`, `user_Password`) VALUES (NULL, '$name', '$email', '0', '$username', '$password');";
     global $db;

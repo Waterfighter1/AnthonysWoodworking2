@@ -1,8 +1,6 @@
-<br>
-<br>
-<br>
-<br>
-<br>
+<div  id="banner" class="loginBanner">
+    <h2 class="bannerText" > Recieve Annoucements, Review Products, And Connect With Our Creator! </h2>
+</div>
 
 <div>
     <div id="logIn">

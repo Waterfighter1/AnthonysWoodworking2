@@ -1,8 +1,6 @@
-<br>
-<br>
-<br>
-<br>
-<br>
+<div  id="banner" class="loginBanner">
+    <h2 class="bannerText" > Log In To Your Subscriber Account </h2>
+</div>
 
 <div>
     <div id="logIn">

@@ -17,7 +17,7 @@
 
     $uniqueGenre = '';
     
-    echo("<p id='linkTitle' class='pageLinks'> Genres: ");
+    echo("<p id='linkTitle' class='pageLinks'> Types: ");
 
     foreach($products as $product)
     {

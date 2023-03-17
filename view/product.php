@@ -25,6 +25,20 @@
                 }   
             ?> 
         </p> 
+
+        <?php
+            if ($_SESSION['loggedIn'] != false) {
+                echo(" 
+                    <br>
+                    <form action='' method='POST'> 
+                        <input type='hidden' name='action' value='tryAddWatchList'> 
+                        <input type='hidden' name='productID' value='$product[0]'> 
+                        <input class='linkButton' type='submit' value='Add To Private Watch List'>
+                    </form> 
+                ");
+            }
+
+        ?>
         
     </div>
 

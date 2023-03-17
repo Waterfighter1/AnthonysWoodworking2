@@ -171,3 +171,42 @@ function createUser($name, $username, $password, $email) {
 
     return getUsersID($username);
 }
+
+function addToWatchList($userID, $productID) {
+    $now = date("Y/m/d"); 
+
+    $existingFavs = getFavorites();
+
+    foreach ($existingFavs as $fav) {
+        if ($fav[0] == $userID && $fav[1] == $productID) {
+            break;
+        }
+        else {          
+            $sql = "INSERT INTO `user_favorites` (`user_ID`, `product_ID`, `uf_date`, `uf_note`, `uf_ID`) VALUES ('$userID', '$productID', '$now', '', NULL);";
+            global $db;
+            $qry = $db-> query($sql);
+        }
+    }
+  
+}
+
+function getFavorites() {
+    $myQuery = "Select * from user_favorites";
+    global $db;
+    $qry = $db->query($myQuery);       
+    $favs = $qry->fetchAll();
+    return $favs;
+}
+
+function getUsersFavorites($userID) {
+    $productIDsArray = [];
+    $favs = getFavorites();
+
+    foreach($favs as $fav) {
+        if ($userID == $fav[0]) {
+            $productIDsArray[count($productIDsArray)] = $fav[1];
+        }
+    }
+
+    return $productIDsArray;
+}

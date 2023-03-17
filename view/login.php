@@ -5,7 +5,7 @@
 <div>
     <div id="logIn">
         <form action='' method='POST'>
-            <h1 class="contactTitle"> Log In To Your Subscriber Account </h1>
+            <h1 class="contactTitle"> Log In Here </h1>
             <hr class='secHeadBreak'>
             <br>
             <?php

@@ -11,7 +11,7 @@
     session_start();
 
     if ($action == 'goLogOut') {
-        $action = "goHome";
+        $action = "goLogIn";
         $_SESSION['loggedIn'] = false;
     }
     else if ($action == 'tryLogIn') {
@@ -39,6 +39,7 @@
 
     switch($action) {
         case 'tryLogIn':
+            $_POST['action'] == 'goLogIn';
         case 'goLogIn':
             include("view/login.php");
             break;
@@ -48,6 +49,9 @@
         case 'goContact':
             include("view/contact.php");
             break;
+        case 'tryAddWatchList':
+            addToWatchList($_SESSION['loggedIn'][0], $_POST['productID']);
+            $_POST['action'] == 'goProfile';
         case 'goProfile':
             include("view/profile.php");
             break;
@@ -58,6 +62,7 @@
             include("view/products.php");
             break;
         case 'trySignUp':
+            $_POST['action'] == 'goSignIn';
         case 'goSignIn':
             include("view/signup.php");
             break;
